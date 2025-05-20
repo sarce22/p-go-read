@@ -37,4 +37,4 @@ func (s *UserService) GetUserByCedula(cedula string) (*models.User, error) {
 	return s.Repo.GetUserByCedula(cedula)
 }
 
-//tets
+//test
