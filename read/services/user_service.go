@@ -37,5 +37,3 @@ func (s *UserService) GetUserByCedula(cedula string) (*models.User, error) {
 	return s.Repo.GetUserByCedula(cedula)
 }
 
-//test
-// GetUserByCedula obtiene un usuario por su cédula.

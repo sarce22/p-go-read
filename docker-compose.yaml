@@ -19,21 +19,6 @@ services:
     networks:
       - app-network
 
-  create-service:
-    image: sebastianarce/create-golang
-    container_name: create-golang-kube
-    ports:
-      - "8080:8080"
-    depends_on:
-      mongo:
-        condition: service_healthy
-    environment:
-      MONGO_URI: mongodb://mongo:27017
-      MONGO_DATABASE: testdb
-    restart: unless-stopped
-    networks:
-      - app-network
-
   read-service:
     image: sebastianarce/read-golang
     container_name: read-golang-kube
@@ -48,37 +33,7 @@ services:
     restart: unless-stopped
     networks:
       - app-network
-
-  update-service:
-    image: sebastianarce/update-golang
-    container_name: update-golang-kube
-    ports:
-      - "8083:8080"
-    depends_on:
-      mongo:
-        condition: service_healthy
-    environment:
-      MONGO_URI: mongodb://mongo:27017
-      MONGO_DATABASE: testdb
-    restart: unless-stopped
-    networks:
-      - app-network
-
-  delete-service:
-    image: sebastianarce/delete-golang
-    container_name: delete-golang-kube
-    ports:
-      - "8081:8080"
-    depends_on:
-      mongo:
-        condition: service_healthy
-    environment:
-      MONGO_URI: mongodb://mongo:27017
-      MONGO_DATABASE: testdb
-    restart: unless-stopped
-    networks:
-      - app-network
-
+      
 volumes:
   mongodb-data:
   mongodb-backup:
