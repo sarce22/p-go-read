@@ -38,3 +38,4 @@ func (s *UserService) GetUserByCedula(cedula string) (*models.User, error) {
 }
 
 //test
+// GetUserByCedula obtiene un usuario por su cédula.
