@@ -20,10 +20,10 @@ services:
       - app-network
 
   read-service:
-    image: sebastianarce/read-golang
-    container_name: read-golang-kube
+    image: sebastianarce/read-golang:latest
+    container_name: read-golang
     ports:
-      - "8082:8080"
+      - "8086:8080"
     depends_on:
       mongo:
         condition: service_healthy
